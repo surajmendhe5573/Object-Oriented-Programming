@@ -1,0 +1,27 @@
+# Ignore Visual Studio Code settings folder
+.vscode/
+
+# Ignore all compiled executable files
+*.exe
+
+# Ignore output folders
+output/
+
+# Ignore temporary files and system files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Ignore compiled object files
+*.o
+*.obj
+
+# Ignore backup and cache files
+*.~*
+
+# Ignore other editor/IDE-specific files (if applicable)
+.idea/
+.DS_Store
+Thumbs.db
