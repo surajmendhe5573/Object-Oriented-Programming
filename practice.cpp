@@ -1,45 +1,47 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// base class
-class Animal{
-    public:
-        void eat(){
-            cout<<"This animal is eating"<<endl;
-        }
-        void sleep(){
-            cout<<"This animal is sleeping"<<endl;
-        }
-};
+class BackAccount{
+    string accountHolderName;
+    double balance= 0;
 
-// derived class 1
-class Dog: public Animal{
     public:
-        void bark(){
-            cout<<"Dog Says: Woof Woof !"<<endl;
+        void setName(string name){
+            accountHolderName= name;
         }
-};
 
-// derived class 2
-class Cat: public Animal{
-    public:
-        void meow(){
-            cout<<"Cat Says: meow !"<<endl;
+        void deposit(double amount){
+            if(amount > 0){
+                balance += amount;
+                cout<<"Deposited amount: $"<<amount<<endl;
+            }else{
+                cout<<"Invalid deposited amount !"<<endl;
+            }
+        }
+
+        void withdraw(double amount){
+            if(amount > 0 && amount <= balance){
+                balance -= amount;
+                cout<<"Withdrawn: $"<<amount<<endl;
+            }else{
+                cout<<"Invalid withdrawn amount or insufficient balance !"<<endl;
+            }
+        }
+
+        void display() const{
+            cout<<"Account Holder: "<<accountHolderName<<endl;
+            cout<<"Balance: $"<<balance<<endl;
         }
 };
 
 int main(){
-    Dog myDog;
-    Cat myCat;
+    BackAccount account;
 
-    myDog.eat();
-    myDog.sleep();
-    myDog.bark();
+    account.setName("Suraj Mendhe");
+    account.deposit(50000);
+    account.withdraw(20000);
 
-    myCat.eat();
-    myCat.sleep();
-    myCat.meow();
+    account.display();
 
     return 0;
 }
-
