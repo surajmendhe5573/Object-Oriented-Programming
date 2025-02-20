@@ -44,6 +44,10 @@ int main() {
     return 0;
 }
 
+// Why is cleanup needed?
+// Since animal1 and animal2 were created using new, they occupy dynamic memory on the heap.
+// delete is used to free that memory and prevent memory leaks.
+
 
 
 /*
