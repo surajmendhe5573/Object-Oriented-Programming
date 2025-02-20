@@ -2,47 +2,52 @@
 using namespace std;
 
 // Base class
-class Shape {
+class Animal {
 public:
     // Virtual function
-    virtual void draw() const {
-        cout << "Drawing a generic shape." << endl;
-    }
-
-    virtual ~Shape() {} // Virtual destructor
-};
-
-// Derived class for Circle
-class Circle : public Shape {
-public:
-    // Override the virtual function
-    void draw() const override {
-        cout << "Drawing a Circle." << endl;
+    virtual void makeSound() {
+        cout << "Animal makes a sound" << endl;
     }
 };
 
-// Derived class for Rectangle
-class Rectangle : public Shape {
+// Derived class 1
+class Dog : public Animal {
 public:
     // Override the virtual function
-    void draw() const override {
-        cout << "Drawing a Rectangle." << endl;
+    void makeSound() override {
+        cout << "Dog barks" << endl;
+    }
+};
+
+// Derived class 2
+class Cat : public Animal {
+public:
+    // Override the virtual function
+    void makeSound() override {
+        cout << "Cat meows" << endl;
     }
 };
 
 int main() {
-    // Base class pointer
-    Shape* shape;
+    // Create objects of base and derived classes
+    Animal* animal1 = new Dog(); // Pointer of type Animal pointing to a Dog object
+    Animal* animal2 = new Cat(); // Pointer of type Animal pointing to a Cat object
 
-    // Pointing to a Circle object
-    Circle circle;
-    shape = &circle;
-    shape->draw(); // Calls Circle's draw()
+    // Polymorphism in action
+    animal1->makeSound(); // Calls Dog's makeSound()
+    animal2->makeSound(); // Calls Cat's makeSound()
 
-    // Pointing to a Rectangle object
-    Rectangle rectangle;
-    shape = &rectangle;
-    shape->draw(); // Calls Rectangle's draw()
+    // Clean up
+    delete animal1;
+    delete animal2;
 
     return 0;
 }
+
+
+
+/*
+1. The word polymorphism means having many forms. In simple words, we can define polymorphism as the ability of a message to be displayed in more than one form. 
+2. A person at the same time can have different characteristics. A man at the same time is a father, a husband, and an employee. 
+3. So the same person possesses different behavior in different situations. This is called polymorphism.
+*/
