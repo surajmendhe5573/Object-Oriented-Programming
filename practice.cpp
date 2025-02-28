@@ -71,3 +71,15 @@ int main() {
 
     return 0;
 }
+
+// Abstraction=> Displaying only essential information and hiding the details.
+/*
+
+The private data members (name, account_number, balance, age) and private helper methods (isValidAmount, isValidAge) are hidden from the user. 
+These are internal details that the user doesn't need to know about.
+
+For example, the user doesn't need to know how the isValidAmount or isValidAge methods work;
+they only need to know that they can deposit money, withdraw money, or update their age.
+
+*/
+
