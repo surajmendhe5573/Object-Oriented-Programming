@@ -30,16 +30,16 @@ public:
 
 int main() {
     // Create objects of base and derived classes
-    Animal* animal1 = new Dog(); // Pointer of type Animal pointing to a Dog object
-    Animal* animal2 = new Cat(); // Pointer of type Animal pointing to a Cat object
+    Animal* animal1 = new Dog(); // Base class pointer pointing to Dog object
+    Animal* animal2 = new Cat(); // Base class pointer pointing to Cat object
 
     // Polymorphism in action
     animal1->makeSound(); // Calls Dog's makeSound()
     animal2->makeSound(); // Calls Cat's makeSound()
 
     // Clean up
-    delete animal1;
-    delete animal2;
+    delete animal1;     // Free memory
+    delete animal2;     // Free memory
 
     return 0;
 }
