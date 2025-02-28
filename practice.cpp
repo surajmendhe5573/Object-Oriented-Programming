@@ -1,36 +1,46 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Animal{
+// base class
+class Vehicle{
     public:
-        virtual void makeSound(){
-            cout<<"Animals are making sound"<<endl;
+        void fuelUp(){
+            cout<<"Vehicle is fueling"<<endl;
         }
 };
 
-class Dog: public Animal{
+// intermediate class  1
+class Engine: public Vehicle{
     public:
-        void makeSound()override{
-            cout<<"Dog barks"<<endl;
+        void startEngine(){
+            cout<<"Engine has started"<<endl;
         }
 };
 
-class Cat: public Animal{
+// intermediate class 2 
+class Wheels: public Vehicle{
     public:
-        void makeSound()override{
-            cout<<"Cat meows"<<endl;
+        void rotateWheels(){
+            cout<<"Wheels are rotating"<<endl;
         }
 };
 
+
+class Car: public Engine , public Wheels{
+    public:
+        void drive(){
+            cout<<"Car is driving"<<endl;
+        }
+};
 int main(){
-    Animal* animal1= new Dog();
-    Animal* animal2= new Cat();
+    Car myCar;
 
-    animal1->makeSound();
-    animal2->makeSound();
+    myCar.startEngine();
+    myCar.rotateWheels();
+    myCar.drive();
 
-    delete animal1;
-    delete animal2;
+    myCar.Engine::fuelUp();
+    myCar.Wheels::fuelUp();
 
     return 0;
 }

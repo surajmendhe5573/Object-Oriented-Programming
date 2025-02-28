@@ -4,11 +4,11 @@ using namespace std;
 // Base class
 class Animal {
 public:
-    void eat() {
+    void eat() {    //  public member function
         cout << "This animal is eating." << endl;
     }
 
-    void sleep() {
+    void sleep() {   //  public member function
         cout << "This animal is sleeping." << endl;
     }
 };
