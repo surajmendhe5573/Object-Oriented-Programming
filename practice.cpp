@@ -1,46 +1,46 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// base class
-class Vehicle{
+class BankAccount{
+    string accountHolderName;
+    double balance;
+
     public:
-        void fuelUp(){
-            cout<<"Vehicle is fueling"<<endl;
+        BankAccount(string accountHolderName, double balance){
+            this->accountHolderName= accountHolderName;
+            this->balance= balance;
+        }
+
+        void deposit(int amount){
+            if(amount > 0){
+                balance += amount;
+                cout<<"Deposited: "<<amount<<endl;
+            }else{
+                cout<<"Invalid amount"<<endl;
+            }
+        }
+
+        void withdraw(int amount){
+            if(amount > 0 && amount <= balance){
+                balance -= amount;
+                cout<<"Withdrawn: "<<amount<<endl;
+            }else{
+                cout<<"Invalid amount or insuffiecient amount"<<endl;
+            }
+        }
+
+        void display(){
+            cout<<"Account Holder: "<<accountHolderName<<endl;
+            cout<<"Balance: $"<<balance<<endl;
         }
 };
 
-// intermediate class  1
-class Engine: public Vehicle{
-    public:
-        void startEngine(){
-            cout<<"Engine has started"<<endl;
-        }
-};
-
-// intermediate class 2 
-class Wheels: public Vehicle{
-    public:
-        void rotateWheels(){
-            cout<<"Wheels are rotating"<<endl;
-        }
-};
-
-
-class Car: public Engine , public Wheels{
-    public:
-        void drive(){
-            cout<<"Car is driving"<<endl;
-        }
-};
 int main(){
-    Car myCar;
+    BankAccount account("suraj", 500);
 
-    myCar.startEngine();
-    myCar.rotateWheels();
-    myCar.drive();
-
-    myCar.Engine::fuelUp();
-    myCar.Wheels::fuelUp();
+    account.deposit(500);
+    account.withdraw(200);
+    account.display();
 
     return 0;
 }

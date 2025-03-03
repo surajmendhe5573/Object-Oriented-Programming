@@ -72,17 +72,17 @@ using namespace std;
 
 class BankAccount {
 private:
-    string accountHolderName; 
-    double balance = 0;       
+    string accountHolderName;   // Private data member
+    double balance = 0;         // Private data member
 
 public:
     void setName(string name) {
-        accountHolderName = name;
+        accountHolderName = name;       // Public method to set name
     }
 
     void deposit(double amount) {
         if (amount > 0) {
-            balance += amount;
+            balance += amount;        // Public method to deposit money
             cout << "Deposited: $" << amount << endl;
         } else {
             cout << "Invalid deposit amount!" << endl;
@@ -91,7 +91,7 @@ public:
 
     void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
-            balance -= amount;
+            balance -= amount;      // Public method to withdraw money
             cout << "Withdrawn: $" << amount << endl;
         } else {
             cout << "Invalid withdrawal amount or insufficient balance!" << endl;
@@ -107,11 +107,11 @@ public:
 int main() {
     BankAccount account;    // Create a BankAccount object
 
-    account.setName("Alice Smith"); 
-    account.deposit(1000.50);      
-    account.withdraw(200.75);      
+    account.setName("Alice Smith");     // Using public method to set name
+    account.deposit(1000.50);           // Using public method to deposit money
+    account.withdraw(200.75);           // Using public method to withdraw money
     // account.withdraw(1000.00);     
-    account.display();             
+    account.display();                 // Using public method to display account details
 
     return 0;
 }
