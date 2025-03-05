@@ -1,46 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class BankAccount{
-    string accountHolderName;
-    double balance;
-
+class Animal{
     public:
-        BankAccount(string accountHolderName, double balance){
-            this->accountHolderName= accountHolderName;
-            this->balance= balance;
+        virtual void makeSound(){
+            cout<<"This animal makes sound"<<endl;
         }
+};
 
-        void deposit(int amount){
-            if(amount > 0){
-                balance += amount;
-                cout<<"Deposited: "<<amount<<endl;
-            }else{
-                cout<<"Invalid amount"<<endl;
-            }
+class Dog: public Animal{
+    public:
+        void makeSound()override{
+            cout<<"Dogs barks"<<endl;
         }
+};
 
-        void withdraw(int amount){
-            if(amount > 0 && amount <= balance){
-                balance -= amount;
-                cout<<"Withdrawn: "<<amount<<endl;
-            }else{
-                cout<<"Invalid amount or insuffiecient amount"<<endl;
-            }
-        }
-
-        void display(){
-            cout<<"Account Holder: "<<accountHolderName<<endl;
-            cout<<"Balance: $"<<balance<<endl;
+class Cat: public Animal{
+    public:
+        void makeSound()override{
+            cout<<"Cats meow"<<endl;
         }
 };
 
 int main(){
-    BankAccount account("suraj", 500);
+        Animal* animal1= new Dog();
+        Animal* animal2= new Cat();
 
-    account.deposit(500);
-    account.withdraw(200);
-    account.display();
+        animal1->makeSound();
+        animal2->makeSound();
 
-    return 0;
+        delete animal1;
+        delete animal2;
+
+        return 0;
 }

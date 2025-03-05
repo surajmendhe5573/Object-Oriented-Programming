@@ -11,6 +11,7 @@ class Car{
 };
 int main(){
     Car myCar;      // Creating an object
+    
     myCar.brand= "Tesla";
     myCar.speed= 200;
     myCar.displayDetails();     // Accessing class method
