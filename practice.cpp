@@ -1,48 +1,36 @@
-// Hybrid Inheritanece=> A combination of muliple and multilevel inheritance.
 #include<bits/stdc++.h>
 using namespace std;
 
-// base class
-class Vehicle{
+class Animal{
     public:
-    void fuelUp(){
-        cout<<"Vehicle is fueling"<<endl;
-    };
-};
-
-// intermediate base  class 1
-class Engine: public Vehicle{
-    public:
-    void startEngine(){
-        cout<<"Engine has started"<<endl;
-    }
-};
-
-// intermediate base class 2
-class Car: public Vehicle{
-    public:
-        void drive(){
-            cout<<"Car is driving"<<endl;
+        virtual void makeSound(){
+            cout<<"Animals are making sound"<<endl;
         }
 };
 
-// derived class inherits from engine and car class
-class Wheels: public Engine, public Car{
+class Dog: public Animal{
     public:
-     void rotateWheels(){
-        cout<<"Wheels are rotating"<<endl;
-     }
+        void makeSound()override{
+            cout<<"Dogs barks !"<<endl;
+        }
+};
+
+class Cat: public Animal{
+    public:
+        void makeSound()override{
+            cout<<"Cat meows !"<<endl;
+        }
 };
 
 int main(){
-   Wheels A1;
+    Animal* animal1= new Dog();
+    Animal* animal2= new Cat();
 
-    A1.startEngine();
-    A1.rotateWheels();
-    A1.drive();
+    animal1->makeSound();
+    animal2->makeSound();
 
-    A1.Engine::fuelUp();
-    A1.Car::fuelUp();
+    delete animal1;
+    delete animal2;
 
     return 0;
 }
