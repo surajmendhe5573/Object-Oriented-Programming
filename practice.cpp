@@ -22,6 +22,7 @@ class Cat: public Animal{
         }
 };
 
+
 int main(){
     Animal* animal1= new Dog();
     Animal* animal2= new Cat();
