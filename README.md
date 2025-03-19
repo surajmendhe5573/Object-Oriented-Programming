@@ -1,2 +1,1 @@
-s## Oops.
-s
+## Oops
