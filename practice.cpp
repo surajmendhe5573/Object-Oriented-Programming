@@ -1,3 +1,4 @@
+// Polymorphism
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -31,8 +32,6 @@ int main(){
 
     delete animal1;
     delete animal2;
-
-    
 
     return 0;
 }
