@@ -3,9 +3,9 @@ using namespace std;
 
 class Animal{
     public:
-        virtual void makeSound(){
-            cout<<"Animals are making sound"<<endl;
-        }
+     virtual void makeSound(){
+        cout<<"Animals making sound"<<endl;
+     }
 };
 
 class Dog: public Animal{
@@ -18,7 +18,7 @@ class Dog: public Animal{
 class Cat: public Animal{
     public:
         void makeSound()override{
-            cout<<"Cat meows !"<<endl;
+            cout<<"Cat meow !"<<endl;
         }
 };
 
@@ -32,6 +32,7 @@ int main(){
     delete animal1;
     delete animal2;
 
+    
+
     return 0;
 }
-
