@@ -1,37 +1,29 @@
-// Polymorphism
 #include<bits/stdc++.h>
 using namespace std;
 
 class Animal{
     public:
-     virtual void makeSound(){
-        cout<<"Animals making sound"<<endl;
-     }
+        void Eat(){
+            cout<<"This animal is eating."<<endl;
+        }
+        void Sleep(){
+            cout<<"This animal is sleeping."<<endl;
+        }
 };
 
 class Dog: public Animal{
     public:
-        void makeSound()override{
-            cout<<"Dogs barks !"<<endl;
-        }
-};
-
-class Cat: public Animal{
-    public:
-        void makeSound()override{
-            cout<<"Cat meow !"<<endl;
+        void Bark(){
+            cout<<"Dog is barking"<<endl;
         }
 };
 
 int main(){
-    Animal* animal1= new Dog();
-    Animal* animal2= new Cat();
+    Dog d;
 
-    animal1->makeSound();
-    animal2->makeSound();
-
-    delete animal1;
-    delete animal2;
+    d.Eat(); // Inherited from Animal class
+    d.Sleep(); // Inherited from Animal class   
+    d.Bark(); // Dog class method
 
     return 0;
 }
