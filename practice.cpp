@@ -3,27 +3,33 @@ using namespace std;
 
 class Animal{
     public:
-        void Eat(){
-            cout<<"This animal is eating."<<endl;
-        }
-        void Sleep(){
-            cout<<"This animal is sleeping."<<endl;
+        virtual void makeSound(){
+            cout<<"Animals making sound"<<endl;
         }
 };
 
 class Dog: public Animal{
-    public:
-        void Bark(){
-            cout<<"Dog is barking"<<endl;
+    public: 
+        void makeSound()override{
+            cout<<"Dog barks."<<endl;
+        }
+};
+class Cat: public Animal{
+    public: 
+        void makeSound()override{
+            cout<<"Cat meows."<<endl;
         }
 };
 
 int main(){
-    Dog d;
+    Animal* animal1= new Dog();
+    Animal* animal2= new Cat();
 
-    d.Eat(); // Inherited from Animal class
-    d.Sleep(); // Inherited from Animal class   
-    d.Bark(); // Dog class method
+    animal1->makeSound();
+    animal2->makeSound();
+
+    delete animal1;
+    delete animal2;
 
     return 0;
 }
