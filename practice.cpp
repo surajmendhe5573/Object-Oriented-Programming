@@ -20,7 +20,6 @@ class Cat: public Animal{
             cout<<"Cat meows."<<endl;
         }
 };
-
 int main(){
     Animal* animal1= new Dog();
     Animal* animal2= new Cat();
