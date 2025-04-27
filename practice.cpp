@@ -1,23 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// base class
 class Animal{
     public:
         virtual void makeSound(){
-            cout<<"Animals making sound"<<endl;
+            cout<<"This animals making sound !"<<endl;
         }
+       
 };
 
+// derived class 1
 class Dog: public Animal{
     public: 
         void makeSound()override{
-            cout<<"Dog barks."<<endl;
+            cout<<"Dog Says: Woof Woof !"<<endl;
         }
 };
+
+// derived class 2
 class Cat: public Animal{
     public: 
         void makeSound()override{
-            cout<<"Cat meows."<<endl;
+            cout<<"Cat Says: Woof Woof !"<<endl;
         }
 };
 
