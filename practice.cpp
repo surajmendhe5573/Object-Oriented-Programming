@@ -18,7 +18,7 @@ class Dog: public Animal{
         }
 };
 
-// derived class 2
+// derived class 2   
 class Cat: public Animal{
     public: 
         void makeSound()override{
