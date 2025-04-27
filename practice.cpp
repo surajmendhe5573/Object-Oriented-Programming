@@ -25,6 +25,7 @@ class Cat: public Animal{
             cout<<"Cat Says: Woof Woof !"<<endl;
         }
 };
+
 int main(){
     Animal* animal1= new Dog();
     Animal* animal2= new Cat();
