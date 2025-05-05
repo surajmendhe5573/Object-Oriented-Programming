@@ -1,40 +1,38 @@
+// multilevel inheritance=> A derived class inherits from another class.
+
 #include<bits/stdc++.h>
 using namespace std;
 
 // base class
-class Animal{
+class Engine{
     public:
-        virtual void makeSound(){
-            cout<<"This animals making sound !"<<endl;
-        }
-       
-};
-
-// derived class 1
-class Dog: public Animal{
-    public: 
-        void makeSound()override{
-            cout<<"Dog Says: Woof Woof !"<<endl;
+        void startEngine(){
+            cout<<"Engine has started"<<endl;
         }
 };
 
-// derived class 2   
-class Cat: public Animal{
-    public: 
-        void makeSound()override{
-            cout<<"Cat Says: Woof Woof !"<<endl;
+// derived class
+class Wheels: public Engine{
+    public:
+        void rotateWheels(){
+            cout<<"Wheels are rotating"<<endl;
+        }
+};
+
+// final derived class
+class Car: public Wheels{
+    public:
+        void drive(){
+            cout<<"Car is driving"<<endl;
         }
 };
 
 int main(){
-    Animal* animal1= new Dog();
-    Animal* animal2= new Cat();
+    Car myCar;
 
-    animal1->makeSound();
-    animal2->makeSound();
-
-    delete animal1;
-    delete animal2;
+    myCar.rotateWheels();
+    myCar.drive();
+    myCar.startEngine();
 
     return 0;
 }
