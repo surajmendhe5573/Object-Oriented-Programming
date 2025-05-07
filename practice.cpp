@@ -30,7 +30,6 @@ class Car: public Wheels{
 
 int main(){
     Car myCar;
-
     myCar.rotateWheels();
     myCar.drive();
     myCar.startEngine();
