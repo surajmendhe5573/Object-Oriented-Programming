@@ -1,3 +1,4 @@
+// Multiple Inheritance: A derived class inherits from multiple base classes.
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -36,4 +37,3 @@ int main() {
     return 0;
 }
 
-// Multiple Inheritance: A derived class inherits from multiple base classes.

@@ -1,3 +1,4 @@
+// Hybrid Inheritance: A combination of multiple and multilevel inheritance.
 #include <iostream>
 using namespace std;
 
@@ -34,8 +35,7 @@ public:
 };
 
 int main() {
-    // Create an object of the derived class
-    Car myCar;
+    Car myCar;     // Create an object of the derived class
 
     // Access methods from multiple inheritance levels
     myCar.startEngine();  // From Engine
@@ -50,4 +50,3 @@ int main() {
 }
 
 
-// Hybrid Inheritance: A combination of multiple and multilevel inheritance.

@@ -1,3 +1,4 @@
+// Multilevel Inheritance: A derived class inherits from another derived class.
 #include <iostream>
 using namespace std;
 
@@ -37,4 +38,3 @@ int main() {
 }
 
 
-// Multilevel Inheritance: A derived class inherits from another derived class.
